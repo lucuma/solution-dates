@@ -15,7 +15,7 @@ clean-pyc:
 	find . -name '*~' -delete
 
 test:
-	py.test --cov-config .coveragerc --cov solution tests/
+	py.test --cov-config .coveragerc --cov solution_dates tests/
 
 upload: clean
 	python setup.py sdist upload
