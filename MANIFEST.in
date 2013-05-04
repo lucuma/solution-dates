@@ -1,0 +1,3 @@
+include *.py *.txt *.md *.rst Makefile
+recursive-include solution_dates *
+recursive-include tests *
