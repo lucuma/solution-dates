@@ -46,6 +46,11 @@ def test_render_default():
     assert field() == u'<input name="abc" type="date" value="28/07/2013">'
 
 
+def test_validate_date():
+    field = Date()
+    assert field.validate() == None
+
+
 def test_validate_date_with_custom_format():
     field = Date(validate=[f.Required], locale='es', format='d/M/Y')
     field.load_data(u'15/05/1979')

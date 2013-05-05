@@ -9,7 +9,7 @@
 
 """
 from .fields import *
-from .parser import parse_datetime
+from .parser import parse_date
 from .validators import *
 
 

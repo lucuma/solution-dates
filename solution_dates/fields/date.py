@@ -5,7 +5,7 @@ from babel.dates import format_date, format_datetime, format_time
 from pytz import timezone, utc
 from solution import Text, Markup, get_html_attrs
 
-from ..parser import parse_datetime
+from ..parser import parse_date
 from ..validators import IsDate
 
 
@@ -52,9 +52,8 @@ class Date(Text):
     format = 'medium'
     locale = 'en'
 
-    def __init__(self, format=None, fuzzy=False, locale=None, **kwargs):
+    def __init__(self, format=None, locale=None, **kwargs):
         self.format = format or self.format
-        self.fuzzy = fuzzy
         self.locale = locale.replace('-', '_') if locale else self.locale
         default = kwargs.get('default')
         if default:
@@ -94,5 +93,5 @@ class Date(Text):
             return None
         format = format or self.format
         locale = locale.replace('-', '_') if locale else self.locale
-        return parse_datetime(dt, format, locale)
+        return parse_date(dt, format, locale)
 

@@ -6,7 +6,7 @@ from babel import Locale
 from babel.dates import parse_pattern
 
 
-def parse_datetime(value, pattern, locale='en'):
+def parse_date(value, pattern, locale='en'):
     loc = Locale(locale)
     regex = get_regex_from_pattern(pattern, loc)
     match = re.match(regex, value, re.IGNORECASE)
@@ -28,17 +28,19 @@ def get_regex_from_pattern(pattern, loc):
         format = loc.datetime_formats[pattern].format
     else:
         format = parse_pattern(pattern).format
-    print format
-    return format % get_locale_dict(loc)
+    return format % get_locale_date_dict(loc)
 
 
-def get_locale_dict(loc):
+def get_locale_date_dict(loc):
     ld = {
         'y': r'(?P<year>[0-9]{4})',
         'Y': r'(?P<year>[0-9]{4})',
-        'yyy': r'(?P<year>[0-9]{4})',
-        'yyyy': r'(?P<year>[0-9]{4})',
         'yy': r'(?P<year>[0-9]{2})',
+        'YY': r'(?P<year>[0-9]{2})',
+        'yyy': r'(?P<year>[0-9]{4})',
+        'YYY': r'(?P<year>[0-9]{4})',
+        'yyyy': r'(?P<year>[0-9]{4})',
+        'YYYY': r'(?P<year>[0-9]{4})',
         'M': r'(?P<month>[0-9]{1,2})',
         'L': r'(?P<month>[0-9]{1,2})',
         'MM': r'(?P<month>[0-9]{1,2})',
