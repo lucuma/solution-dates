@@ -13,4 +13,4 @@ from .parser import parse_date
 from .validators import *
 
 
-__version__ = '1.0'
+__version__ = '0.5'

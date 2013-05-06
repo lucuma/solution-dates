@@ -1,7 +1,7 @@
 # Solution-dates Changelog
 
 
-## 1.0
+## 0.5
 
 - First public release
 
