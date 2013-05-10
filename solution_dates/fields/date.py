@@ -55,6 +55,7 @@ class Date(Text):
     def __init__(self, format=None, locale=None, **kwargs):
         self.format = format or self.format
         self.locale = locale.replace('-', '_') if locale else self.locale
+        kwargs.setdefault('default', None)
         return super(Date, self).__init__(**kwargs)
 
     def py_to_str(self, format=None, locale=None, **kwargs):
@@ -86,7 +87,7 @@ class Date(Text):
 
     def str_to_py(self, format=None, locale=None):
         if not self.str_value:
-            return self.default
+            return self.default or None
         format = format or self.format
         locale = locale.replace('-', '_') if locale else self.locale
         return parse_date(self.str_value, format, locale)
