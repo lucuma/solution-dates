@@ -51,6 +51,12 @@ def test_validate_date():
     assert field.validate() == None
 
 
+def test_validate_date_with_default():
+    today = date.today()
+    field = Date(default=today)
+    assert field.validate() == today
+
+
 def test_validate_date_with_custom_format():
     field = Date(validate=[f.Required], locale='es', format='d/M/Y')
     field.load_data(u'15/05/1979')

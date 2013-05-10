@@ -85,10 +85,9 @@ class Date(Text):
         return Markup(html)
 
     def str_to_py(self, format=None, locale=None):
-        dt = self.str_value or self.default
-        if not dt:
-            return None
+        if not self.str_value:
+            return self.default
         format = format or self.format
         locale = locale.replace('-', '_') if locale else self.locale
-        return parse_date(dt, format, locale)
+        return parse_date(self.str_value, format, locale)
 
