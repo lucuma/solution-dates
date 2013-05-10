@@ -55,9 +55,6 @@ class Date(Text):
     def __init__(self, format=None, locale=None, **kwargs):
         self.format = format or self.format
         self.locale = locale.replace('-', '_') if locale else self.locale
-        default = kwargs.get('default')
-        if default:
-            assert isinstance(default, datetime.date)
         return super(Date, self).__init__(**kwargs)
 
     def py_to_str(self, format=None, locale=None, **kwargs):
