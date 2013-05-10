@@ -5,9 +5,9 @@
 
 A dates-handling extension for the Solution library.
 
-This is a separate package from Solution because it depends of two other libraries (babel and pytz) while the former has no dependencies.
+This is a separate package from Solution because it depends of another library (babel).
 
-    
+
 ### Community & support
 
 Issue tracker: https://github.com/lucuma/solution-dates/issues

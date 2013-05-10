@@ -2,23 +2,17 @@
 import datetime
 
 from babel.dates import format_date, format_datetime, format_time
-from pytz import timezone, utc
-from solution import Text, Markup, get_html_attrs
+from solution import Text, Markup, IsDate, get_html_attrs
 
 from ..parser import parse_date
-from ..validators import IsDate
 
 
-class Date(Text):
+class ParsedDate(Text):
 
-    """A date field.
+    """A date field with custom format
 
     :param format:
         When returned as a string, the value will be printed using this format.
-
-    :param fuzzy:
-        If fuzzy is set to True, unknown tokens in the string are ignored
-        during parsing. `False` by default.
 
     :param validate:
         An list of validators. This will evaluate the current `value` when
@@ -47,7 +41,7 @@ class Date(Text):
         Default timezone for this field. Overwrite the form timezone.
 
     """
-    _type = 'date'
+    _type = 'text' # HTML5's type="date" can only read yyy-MM-dd format
     default_validator = IsDate
     format = 'medium'
     locale = 'en'
@@ -56,7 +50,7 @@ class Date(Text):
         self.format = format or self.format
         self.locale = locale.replace('-', '_') if locale else self.locale
         kwargs.setdefault('default', None)
-        return super(Date, self).__init__(**kwargs)
+        return super(ParsedDate, self).__init__(**kwargs)
 
     def py_to_str(self, format=None, locale=None, **kwargs):
         dt = self.obj_value or self.default

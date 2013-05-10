@@ -10,7 +10,6 @@
 """
 from .fields import *
 from .parser import parse_date
-from .validators import *
 
 
-__version__ = '0.5'
+__version__ = '0.6'

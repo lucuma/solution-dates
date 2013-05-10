@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-from .date import Date
+from .date import ParsedDate
