@@ -79,34 +79,39 @@ class PyTest(TestCommand):
 
     def run_tests(self):
         import pytest
+        import sys
         errno = pytest.main(self.test_args)
         sys.exit(errno)
 
 
 setup(
-    name = NAME,
-    version = get_version(),
-    author = AUTHOR,
-    author_email = AUTHOR_EMAIL,
-    packages = [PACKAGE],
-    package_data = find_packages_data(PACKAGE, 'tests'),
-    zip_safe = False,
-    url = URL,
-    license = 'MIT license (http://www.opensource.org/licenses/mit-license.php)',
-    description = DESCRIPTION,
-    long_description = __doc__,
-    install_requires = get_requirements(),
-    classifiers = [
+    name=NAME,
+    version=get_version(),
+    author=AUTHOR,
+    author_email=AUTHOR_EMAIL,
+    packages=[PACKAGE],
+    package_data=find_packages_data(PACKAGE, 'tests'),
+    zip_safe=False,
+    url=URL,
+    license='MIT license (http://www.opensource.org/licenses/mit-license.php)',
+    description=DESCRIPTION,
+    long_description=__doc__,
+    install_requires=get_requirements(),
+    classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: pypy',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ],
-    tests_require = ['pytest-cov', 'orm'],
-    cmdclass = {'test': PyTest},
-    test_suite = '__main__.run_tests'
+    tests_require=['pytest-cov', 'orm'],
+    cmdclass={'test': PyTest},
+    test_suite='__main__.run_tests'
 )

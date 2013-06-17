@@ -5,7 +5,7 @@
 
 A dates-handling extension for the Solution library.
 
-This is a separate package from Solution because it depends of another library (babel).
+This is a separate package from Solution because it depends of another library (Babel), and as an example of a custom Field.
 
 
 ### Community & support
@@ -18,7 +18,7 @@ Solution-dates shares that channel with other Lucuma projects, so please let the
 
 ---
 Note:
-This library is Python3.3 ready but Babel not yet. You can temporaly use a fork like: https://github.com/vsajip/babel3 and copying the `localedata` dir from an standard Babel installation.
+This library is Python3.3 ready but Babel isn't yet. You can temporaly use a fork like: https://github.com/vsajip/babel3 and copying the `localedata` dir from an standard Babel installation.
 
 ---------------------------------------
 License: [MIT License] (http://www.opensource.org/licenses/mit-license.php).
