@@ -16,6 +16,10 @@ IRC channel: #lucuma on irc.freenode.net.
 
 Solution-dates shares that channel with other Lucuma projects, so please let the others know that you are talking about Solution-dates when asking a question.
 
+---
+Note:
+This library is Python3.3 ready but Babel not yet. You can temporaly use a fork like: https://github.com/vsajip/babel3 and copying the `localedata` dir from the official Babel installation.
+
 ---------------------------------------
 License: [MIT License] (http://www.opensource.org/licenses/mit-license.php).
 © [Lúcuma labs] (http://lucumalabs.com).  
