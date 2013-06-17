@@ -1,2 +1,2 @@
 babel
-solution>=2.3
+solution>=2.3.4

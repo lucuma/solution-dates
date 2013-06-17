@@ -1,9 +1,27 @@
 # -*- coding: utf-8 -*-
 import datetime
 import re
+import sys
 
 from babel import Locale
 from babel.dates import parse_pattern
+
+
+PY2 = sys.version_info[0] == 2
+
+
+def iteritems(d, **kw):
+    """Return an iterator over the (key, value) pairs of a dictionary."""
+    if not PY2:
+        return iter(d.items(**kw))
+    return d.iteritems(**kw)
+
+
+def itervalues(d, **kw):
+    """Return an iterator over the values of a dictionary."""
+    if not PY2:
+        return iter(d.values(**kw))
+    return d.itervalues(**kw)
 
 
 def parse_date(value, pattern, locale='en'):
@@ -58,12 +76,14 @@ def get_locale_date_dict(loc):
 
 
 def get_months(loc, key):
-    items = get_escaped_pattern(loc.months['format'][key].itervalues())
+    values = itervalues(loc.months['format'][key])
+    items = get_escaped_pattern(values)
     return r'(?P<month>' + r'|'.join(items) + r')'
 
 
 def get_days(loc, key):
-    items = get_escaped_pattern(loc.days['format'][key].itervalues())
+    values = itervalues(loc.days['format'][key])
+    items = get_escaped_pattern(values)
     return r'|'.join(items),
 
 
@@ -90,8 +110,8 @@ def extract_month(value, loc):
     if value.isdigit():
         return int(value)
     months = loc.months['format']
-    for key in months:
-        if value in months[key].values():
-            revdict = {v:k for k, v in months[key].items()}
-            return revdict[value]
+    for grkey, mdict in iteritems(months):
+        for k, v in iteritems(mdict):
+            if v == value:
+                return k
 

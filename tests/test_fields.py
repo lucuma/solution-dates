@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-from datetime import date, datetime
+from datetime import date
 
-import pytest
 import solution as f
 from solution_dates import ParsedDate
 
@@ -11,7 +10,7 @@ def test_render_date():
     field.name = u'abc'
     field.load_data(obj_value=date(1979, 5, 13))
 
-    assert unicode(field) == field() == field.as_input()
+    assert field() == field.as_input()
     assert (field(foo='bar') ==
             u'<input foo="bar" name="abc" type="text" value="13/05/1979">')
     assert (field.as_textarea(foo='bar') ==
@@ -48,7 +47,7 @@ def test_render_default():
 
 def test_validate_date():
     field = ParsedDate()
-    assert field.validate() == None
+    assert field.validate() is None
 
 
 def test_validate_date_with_default():

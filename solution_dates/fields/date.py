@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-import datetime
-
-from babel.dates import format_date, format_datetime, format_time
+from babel.dates import format_date  # , format_datetime, format_time
 from solution import Text, Markup, IsDate, get_html_attrs
 
 from ..parser import parse_date
@@ -41,7 +39,7 @@ class ParsedDate(Text):
         Default timezone for this field. Overwrite the form timezone.
 
     """
-    _type = 'text' # HTML5's type="date" can only read yyy-MM-dd format
+    _type = 'text'  # HTML5's type="date" can only read yyy-MM-dd format
     default_validator = IsDate
     format = 'medium'
     locale = 'en'
