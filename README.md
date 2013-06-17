@@ -18,7 +18,7 @@ Solution-dates shares that channel with other Lucuma projects, so please let the
 
 ---
 Note:
-This library is Python3.3 ready but Babel not yet. You can temporaly use a fork like: https://github.com/vsajip/babel3 and copying the `localedata` dir from the official Babel installation.
+This library is Python3.3 ready but Babel not yet. You can temporaly use a fork like: https://github.com/vsajip/babel3 and copying the `localedata` dir from an standard Babel installation.
 
 ---------------------------------------
 License: [MIT License] (http://www.opensource.org/licenses/mit-license.php).
