@@ -7,8 +7,8 @@ Solution-Dates
 A dates-handling extension for the Solution library
 
 
-MIT License. See ``LICENSE`` for more details.
-Copyright © 2013, Juan-Pablo Scaletti
+BSD License. See ``LICENSE`` for more details.
+Copyright © 2013, Lúcuma labs (http://lucumalabs.com)
 
 """
 from .fields import *

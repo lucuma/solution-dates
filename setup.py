@@ -22,7 +22,7 @@ def get_requirements(filename='requirements.txt'):
     return [l for l in lines if l and not l.startswith('#')]
 
 
-data = read_from(get_path('solution_dates', '__init__.py')).encode('utf8')
+data = read_from(get_path('solution_dates', '__init__.py'))
 version = re.search(u"__version__\s*=\s*u?'([^']+)'", data).group(1).strip()
 readme = read_from(get_path('README.rst'))
 history = read_from(get_path('HISTORY.rst'))
@@ -37,7 +37,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     url='http://github.com/lucuma/solution_dates',
-    license='MIT license',
+    license='BSD',
     description='A dates-handling extension for the Solution library',
     long_description=readme + '\n\n' + history,
     install_requires=get_requirements(),
@@ -45,7 +45,7 @@ setup(
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: BSD',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         "Programming Language :: Python :: 2",

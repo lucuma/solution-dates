@@ -17,5 +17,5 @@ A dates-handling extension for the Solution library
 This is a separate package from Solution as an example of a custom Field.
 
 
-* MIT License. See ``LICENSE`` for more details.
+* BSD License. See ``LICENSE`` for more details.
 * Documentation: http://solution_dates.rtfd.org.
