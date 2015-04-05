@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
 from babel.dates import format_date  # , format_datetime, format_time
 from solution import Text, Markup, IsDate, get_html_attrs
 

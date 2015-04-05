@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# coding=utf-8
 b'This library requires pypy or Python 2.6, 2.7, 3.3, pypy or newer'
 import io
 import os
@@ -37,7 +37,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     url='http://github.com/lucuma/solution_dates',
-    license='BSD License',
+    license='MIT license (see LICENSE)',
     description='A dates-handling extension for the Solution library',
     long_description=readme + '\n\n' + history,
     install_requires=get_requirements(),
@@ -45,7 +45,7 @@ setup(
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         "Programming Language :: Python :: 2",

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
 """
 =============================
 Solution-Dates
@@ -7,12 +7,12 @@ Solution-Dates
 A dates-handling extension for the Solution library
 
 
-BSD License. See ``LICENSE`` for more details.
-Copyright © 2013, Lúcuma labs (http://lucumalabs.com)
+:copyright: `Juan-Pablo Scaletti <http://jpscaletti.com>`_.
+:license: MIT, see LICENSE for more details.
 
 """
-from .fields import *
-from .parser import parse_date
+from .fields import *  # noqa
+from .parser import parse_date  # noqa
 
 
 __version__ = '0.6.2'
