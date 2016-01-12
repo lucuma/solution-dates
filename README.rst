@@ -17,6 +17,5 @@ A dates-handling extension for the Solution library
 This is a separate package from Solution as an example of a custom Field.
 
 
-:copyright: `Juan-Pablo Scaletti <http://jpscaletti.com>`_.
+:copyright: `Lúcuma labs S.A.C. <http://lucumalabs.com>`_
 :license: MIT, see LICENSE for more details.
-

@@ -5,12 +5,5 @@ Credits
 Development Lead
 ----------------
 
-* `Juan-Pablo Scaletti`_ <juanpablo@lucumalabs.com>
+* `Juan-Pablo Scaletti <http://jpscaletti.com>`_
 
-Contributors
-------------
-
-None yet. Why not be the first?
-
-
-.. _Juan-Pablo Scaletti: http://jpscaletti.com/

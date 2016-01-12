@@ -83,4 +83,3 @@ class ParsedDate(Text):
         format = format or self.format
         locale = locale.replace('-', '_') if locale else self.locale
         return parse_date(self.str_value, format, locale)
-
